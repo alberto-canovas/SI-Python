@@ -1,6 +1,14 @@
 
 
+
+
+
 def numero_a_mes(mes):
+    #if not mes.isnumeric:
+    #    raise Exception('Debe introducir un número.')
+    if mes < 1 or mes > 12:
+        raise Exception('Debe introducir un número entre 1 y 12.')
+
     match mes:
         case 1:
             return('Enero')
@@ -26,4 +34,18 @@ def numero_a_mes(mes):
             return('Noviembre')
         case 12:
             return('Diciembre')
-    
+
+
+for i in range(0,14):
+    try:
+        print(numero_a_mes(i))  
+
+    except Exception as error:
+        print(error)
+
+(""")
+try:
+    print(numero_a_mes)
+except Exception as error:
+    print(error)
+(""")
