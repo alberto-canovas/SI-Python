@@ -20,18 +20,33 @@ def llenar_cubo(cubo):
     print(cubo)
 
 def vaciar_cubo_en_otro(cubo_a_vaciar,cubo_a_llenar):
-    if cubo_a_llenar["contenido"]==cubo_a_llenar["capacidad"] or cubo_a_llenar["contenido"] > cubo_a_llenar["capacidad"] :
+    
+    #if (cubo_a_llenar["contenido"]!=0):
+    cubo_a_llenar["contenido"]+=cubo_a_vaciar["contenido"]
+    cubo_a_vaciar["contenido"]=0
+
+    if cubo_a_llenar["contenido"] == cubo_a_llenar["capacidad"]:
         raise Exception('El cubo a llenar está al máximo de su capacidad.')
-    cubo_a_vaciar["contenido"]+=cubo_a_llenar["contenido"]
+    
+    if cubo_a_llenar["contenido"] > cubo_a_llenar["capacidad"] :
+        raise Exception('El cubo ha excedido su capacidad.')
     print(f'El cubo a llenar tiene {cubo_a_llenar}')
     print(f'El cubo a vaciar tiene {cubo_a_vaciar}')
+    print('--------------------------------------')
 
 
 try:
-    print(cubo_tres)
+    
     llenar_cubo(cubo_tres)
     #llenar_cubo(cubo_tres)
     vaciar_cubo_en_otro(cubo_tres,cubo_uno)
+    llenar_cubo(cubo_tres)
+    vaciar_cubo_en_otro(cubo_tres,cubo_uno)
+    llenar_cubo(cubo_tres)
+    vaciar_cubo_en_otro(cubo_tres,cubo_uno)
+
+    print(cubo_uno)
+
 except Exception as error:
     print(error)
 
