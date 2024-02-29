@@ -37,31 +37,44 @@ def main():
     argumentos=sys.argv[1:]
     try:
         limpiar_pantalla()
+        son_argumentos_correctos(argumentos)
         obtener_base_imponible(argumentos)
         obtener_tipo_impuesto(argumentos)
     except Exception as error:
          print(error)
 
+def son_argumentos_correctos(argumentos):
+    base_imponible = argumentos[0]
+    tipo_impuesto = argumentos[1]
+    num_argumentos = 2
+
+    if len(argumentos)!=num_argumentos:
+        raise Exception(f'Debe introducir {num_argumentos} argumentos')
+        
+    if not base_imponible.isnumeric():
+        raise Exception ('El primer argumento debe de ser un número positivo.')
+
+    if not tipo_impuesto ==  'exento' or 'reducido' or 'superreducido' or 'normal':
+         raise Exception('El segundo argumento debe de ser (exento), (reducido), (superreducido) o (normal).')
+
 
 def obtener_base_imponible(argumentos):
-    if not argumentos[0].isnumeric():
-        raise Exception ('El primer argumento debe de ser un número positivo.')
+    # base_imponible = argumentos[0]
+    # if not base_imponible.isnumeric():
+    #     raise Exception ('El primer argumento debe de ser un número positivo.')
+
     print('ok')
 
 
 def obtener_tipo_impuesto(argumentos):
-    if not argumentos[1] ==  'exento' or 'reducido' or 'superreducido' or 'normal':
-         raise Exception('El segundo argumento debe de ser (exento), (reducido), (superreducido) o (normal).')
+    # tipo_impuesto = argumentos[1]
+    # if not tipo_impuesto ==  'exento' or 'reducido' or 'superreducido' or 'normal':
+    #      raise Exception('El segundo argumento debe de ser (exento), (reducido), (superreducido) o (normal).')
+    
     print('ok TIPO IMPUESTO')    
     
 
 
-
-def calcular_importe_impuesto_aplicado_producto(base_imponible,tipo_argumento,fecha_adquirido):
-    ...
-
-for i in range(1,4):
-        print(impuesto_valor_añadido[i])
 
 def limpiar_pantalla():
     subprocess.run('clear')
