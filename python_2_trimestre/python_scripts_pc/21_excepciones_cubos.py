@@ -21,15 +21,20 @@ def llenar_cubo(cubo):
 
 def vaciar_cubo_en_otro(cubo_a_vaciar,cubo_a_llenar):
     
-    #if (cubo_a_llenar["contenido"]!=0):
+    if cubo_a_vaciar["contenido"]> cubo_a_llenar["capacidad"] - cubo_a_llenar["contenido"]:
+        raise Exception ('El cubo a llenar no tiene capacidad.')
+
+    if cubo_a_llenar["contenido"] > cubo_a_llenar["capacidad"] :
+        raise Exception('El cubo ha excedido su capacidad.')
+
+    if cubo_a_llenar["contenido"] + cubo_a_vaciar["contenido"] > cubo_a_llenar["capacidad"]:
+        raise Exception ('El cubo a llenar no se puede llenar más.')
+    
+
+
     cubo_a_llenar["contenido"]+=cubo_a_vaciar["contenido"]
     cubo_a_vaciar["contenido"]=0
 
-    if cubo_a_llenar["contenido"] == cubo_a_llenar["capacidad"]:
-        raise Exception('El cubo a llenar está al máximo de su capacidad.')
-    
-    if cubo_a_llenar["contenido"] > cubo_a_llenar["capacidad"] :
-        raise Exception('El cubo ha excedido su capacidad.')
     print(f'El cubo a llenar tiene {cubo_a_llenar}')
     print(f'El cubo a vaciar tiene {cubo_a_vaciar}')
     print('--------------------------------------')

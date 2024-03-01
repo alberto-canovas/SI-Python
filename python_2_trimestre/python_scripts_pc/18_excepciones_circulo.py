@@ -4,6 +4,7 @@ def main():
     argumentos = sys.argv[1:]
     limpiar_pantalla()
     try:
+        son_argumentos_correcto(argumentos)
         calcular_area_circulo(4)
         calcular_perimetro_circulo(4)
         calcular_area_circulo(5)

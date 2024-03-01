@@ -4,7 +4,7 @@
 
 
 def numero_a_mes(mes):
-    #if not mes.isnumeric:
+    #if not mes.isnumeric():
     #    raise Exception('Debe introducir un número.')
     if mes < 1 or mes > 12:
         raise Exception('Debe introducir un número entre 1 y 12.')
