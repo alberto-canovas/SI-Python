@@ -80,7 +80,7 @@ def obtener_tipo_impuesto(argumentos):
 
 
 def obtener_fecha_actual():
-    subprocess.run('date +%d/ %m/ %Y')
+    subprocess.run(['date','+"%d/%m/%Y"'])
      
 
 
