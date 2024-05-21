@@ -1,0 +1,10 @@
+DOCKER (Devops) Development operations: dockr,kubernates, terraform
+
+docker push: descargar imagenes
+docker run: crear y arrancar un contenedor a partir de una imagen
+docker star y docker stop: arrancar y detener un contenedor que ya existe.
+docker exec: para arrancar una aplicación dentro de un contenedor.
+docker ps y ps -a: para ver los contenedores existentes.
+
+-----------------------------
+Crear ficheros yml
