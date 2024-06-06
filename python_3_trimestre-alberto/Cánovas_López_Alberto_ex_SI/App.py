@@ -43,7 +43,7 @@ match(opcion):
                         ServidorFtp.calcular_almacenamiento_ocupado()
                     case '4':
                         print('Sesión cerrada correctamente')
-                        sys.exit()
+                        
 
             
 

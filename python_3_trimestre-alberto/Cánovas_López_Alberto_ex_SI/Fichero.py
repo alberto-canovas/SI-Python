@@ -9,6 +9,9 @@ class Fichero:
     @property
     def tamaño(self):
         return self.tamaño
+    @property
+    def nombre(self):
+        return self.nombre
     
     @tamaño.setter
     def tamaño(self,valor:int):
